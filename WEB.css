@@ -1,0 +1,30 @@
+.topnav{
+     background-color: #fff;
+     font-size: 14px;
+     margin-top: 40px;
+}
+
+.topnav a{
+    color: #3d3535;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 15px;
+    text-decoration: none;
+}
+#myTopnav a:hover {
+    background: #5e5e5e38;
+}
+
+
+.task {
+    width: 500px;
+    height: 60px;
+    float: left;
+    margin-right: 10px;
+}
+
+#id2 {
+  padding: 40px 250px;
+  height: 100px;
+  display: flex;
+}

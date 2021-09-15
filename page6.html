@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf=8">
+   <title>WEB</title>
+   <link rel="stylesheet" href="WEB.css">
+</head>
+
+<body>   
+
+ <div>
+
+
+ <h3> WEB-программирование </h3>
+
+ <p> Гетто И.В группа 8В92 </p>
+
+ <p> Лабораторная номер 6 (вариант 12) </p>
+
+ <div class="topnav" id="myTopnav">
+
+            <a href="page.html"> Лабораторная номер  1 </a>
+            <a href="page2.html"> Лабораторная номер  2 </a>
+            <a href="page3.html"> Лабораторная номер  3 </a>
+            <a href="page4.html"> Лабораторная номер  4 </a>
+            <a href="page5.html"> Лабораторная номер  5 </a>
+            <a href="page6.html"> Лабораторная номер  6 </a>
+            <a href="page7.html"> Лабораторная номер  7 </a>
+            <a href="page8.html"> Лабораторная номер  8 </a>
+</div>
+<p>
+<div class="topnav" id="myTopnav">
+
+            <a href="page9.html"> Лабораторная номер 9 </a>
+            <a href="page10.html"> Лабораторная номер 10 </a>
+            <a href="page10.html"> Лабораторная номер 11 </a>
+            <a href="page10.html"> Лабораторная номер 12 </a>
+            <a href="page10.html"> Лабораторная номер 13 </a>
+            <a href="page10.html"> Лабораторная номер 14 </a>
+            <a href="page10.html"> Лабораторная номер 15 </a>
+
+</div>
+</p>
+ <p> ЗАДАНИЕ: </p>
+
+</div>
+
+
+<script>
+
+let nums = [];
+for (let i=1;i<=100;i++) {
+  nums[i] = Math.round( Math.random() * 100 );
+}
+
+document.writeln('Начальный массив: ' + nums.join(",  ") + "<br/>" + "<br/>");
+
+let nums1 = [];
+for (let i = 0; i < nums.length; i++) {
+  for (let j = i+1; j < nums.length; j++) {
+    if(nums[i] == nums[j]) { nums1.push(nums[i]) }
+  }
+}
+
+document.writeln('Новый массив: ' + nums1.join(",  "));
+
+</script>
+
+</body>
+
+</html>

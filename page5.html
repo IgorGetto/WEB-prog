@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf=8">
+   <title>WEB</title>
+   <link rel="stylesheet" href="WEB.css">
+</head>
+
+<body>   
+
+ <div>
+
+
+ <h3> WEB-программирование </h3>
+
+ <p> Гетто И.В группа 8В92 </p>
+
+ <p> Лабораторная номер 4 (вариант 8) </p>
+
+<div class="topnav" id="myTopnav">
+
+            <a href="page.html"> Лабораторная номер  1 </a>
+            <a href="page2.html"> Лабораторная номер  2 </a>
+            <a href="page3.html"> Лабораторная номер  3 </a>
+            <a href="page4.html"> Лабораторная номер  4 </a>
+            <a href="page5.html"> Лабораторная номер  5 </a>
+            <a href="page6.html"> Лабораторная номер  6 </a>
+            <a href="page7.html"> Лабораторная номер  7 </a>
+            <a href="page8.html"> Лабораторная номер  8 </a>
+</div>
+<p>
+<div class="topnav" id="myTopnav">
+
+            <a href="page9.html"> Лабораторная номер 9 </a>
+            <a href="page10.html"> Лабораторная номер 10 </a>
+            <a href="page10.html"> Лабораторная номер 11 </a>
+            <a href="page10.html"> Лабораторная номер 12 </a>
+            <a href="page10.html"> Лабораторная номер 13 </a>
+            <a href="page10.html"> Лабораторная номер 14 </a>
+            <a href="page10.html"> Лабораторная номер 15 </a>
+
+</div>
+</p>
+ <p> ЗАДАНИЕ: </p>
+
+</div>
+
+<tr> 
+<td align="right">Введите число = </td>
+<td> <input type="text" id="id1" class="easypositive-integer" style="width:360px;"> </td>
+</tr>
+<td colspan="2" align="center"> 
+    <input type="button" value="Рассчитать" onclick="calc();" return="" false;="" style="visibility: visible;">  
+    <input type="reset" value="Сбросить" style="visibility: visible;">
+    <div class="errClass" id="dynErrDisp" style="display: none;"></div>
+    <div id="calciScroll"></div> 
+</td>
+<tr><td colspan="2"> &nbsp; </td></tr>
+<td>
+    <textarea id="id2" readonly=""></textarea>
+</td>
+<script>
+
+function calc()
+{
+    var rs=parseFloat(document.getElementById("id1").value); // берем число по id
+    if(rs<=9999999)
+        document.getElementById("id2").value=checkNum(rs).reverse().join("");
+    else
+    {
+        alert("Введите число (до 9999999) !");
+        document.getElementById("id1").value="";
+    }
+}
+
+function checkNum(N)
+{
+    let results = [], center, frac;
+    let maxCt = Math.ceil((Math.sqrt(8*N+1)-1)/2); // Поиск максимального числа, на которое можно попробовать делить наше число N
+    let ct = ((N&1)==0)?3:2;  // Проверяем, является ли N нечетным, выполняя побитовое И. Если N четное то будем делить на 3.
+
+    for (ct = ct; ct <= maxCt; ct++)
+    {
+        center=N/ct, frac=center-Math.floor(center); // Выявление нецелой части числа
+        if ((frac==0 && (ct&1)==1) || (frac==0.5 && (ct&1)==0)) // условие верно только если возможно добавить целые числа в нашу сумму
+        {   
+            let ct1 = center-(ct-1)/2;
+            let res = ct1; // это наше первое число в сумме
+
+            for(let k = 0; k < ct - 1; k++)
+            {
+                res=res + "+" + ( ct1 + (k+1) ); // добавляем следующее число для суммы
+            }
+            res = res + " = " + N + "\n\n";
+            results.push(res); // добавим результат в наш массив (сумму чисел)
+        }
+    }
+    if(results.length==0)
+        results.push(N + " не может, это не последовательное число.");
+    else
+        results.push(N + " может, это последовательное число.\n\n" + N + " может быть записано как: \n\n");
+    return results;
+}
+
+
+</script>
+
+
+</body>
+
+</html>

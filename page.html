@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf=8">
+   <title>WEB</title>
+   <link rel="stylesheet" href="WEB.css">
+</head>
+
+<body>   
+
+ <div>
+
+
+ <h3> WEB-программирование </h3>
+
+ <p> Гетто И.В группа 8В92 </p>
+
+ <p> Лабораторная номер 1 (вариант 6) </p>
+<div class="topnav" id="myTopnav">
+
+            <a href="page.html"> Лабораторная номер  1 </a>
+            <a href="page2.html"> Лабораторная номер  2 </a>
+            <a href="page3.html"> Лабораторная номер  3 </a>
+            <a href="page4.html"> Лабораторная номер  4 </a>
+            <a href="page5.html"> Лабораторная номер  5 </a>
+            <a href="page6.html"> Лабораторная номер  6 </a>
+            <a href="page7.html"> Лабораторная номер  7 </a>
+            <a href="page8.html"> Лабораторная номер  8 </a>
+</div>
+<p>
+<div class="topnav" id="myTopnav">
+
+            <a href="page9.html"> Лабораторная номер 9 </a>
+            <a href="page10.html"> Лабораторная номер 10 </a>
+            <a href="page10.html"> Лабораторная номер 11 </a>
+            <a href="page10.html"> Лабораторная номер 12 </a>
+            <a href="page10.html"> Лабораторная номер 13 </a>
+            <a href="page10.html"> Лабораторная номер 14 </a>
+            <a href="page15.html"> Лабораторная номер 15 </a>
+
+</div>
+</p>
+
+ <p> ЗАДАНИЕ: </p>
+
+
+</div>
+
+
+<script>
+
+
+let a = 0;
+let str = prompt("Введите массив (через пробел):", "");
+let arr = str.split(' ');
+let count = Object.keys(arr).length;
+
+for (let i = 0; i < count; i++)
+{
+     if ( isNaN(arr[i]) == true )
+          { alert('Введите число!');
+            location.reload();
+          } 
+}
+       
+
+document.writeln("Массив: " + arr.join(",  ")); 
+
+
+
+    for (let i = 0; i < count; i++) {
+
+if (  (Number(arr[i]) - 5) > Number(arr[i + 1])  ) {a = a + 1;}
+else if
+   (  (Number(arr[i]) + 5) < Number(arr[i + 1])  ) {a = a + 1;}
+
+}
+
+ if (a > 0) {  document.writeln ( "(эта гора не масштабируемая)" );  }
+ else
+            {  document.writeln ( "(эта гора масштабируемая)" );  }
+</script>
+
+
+</body>
+
+</html>
